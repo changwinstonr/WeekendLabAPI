@@ -28,11 +28,13 @@ public class ScryApi {
     public void doRequest(int urlIndex){
         AsyncHttpClient client = new AsyncHttpClient();
         //TODO: retrieve multiverseid &&|| image
-        client.get("http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + urlIndex + "&type=card", null, new JsonHttpResponseHandler(){
+        client.get("https://api.magicthegathering.io/v1/cards/?multiverseId=" + urlIndex + "&type=card", null, new JsonHttpResponseHandler(){
+            //Attempt1: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + urlIndex + "&type=card"
+            //Attempt2: "https://api.magicthegathering.io/v1/cards/?multiverseId=" + urlIndex + "&type=card"
         //TODO: Try/Catch
             public void onSuccess(int statusCode, Header[] headers, JSONObject response){
                 try {
-                    responseHandler.handleResponse(response.getString("multiverseid"));
+                    responseHandler.handleResponse(response.getString("imageUrl"));
                 } catch (JSONException e){
                     e.printStackTrace(); //returns error on exception
                 }
@@ -43,6 +45,7 @@ public class ScryApi {
     public interface ApiResponseHandler {
         void handleResponse(String response);
     }
+//TODO: Far stretch goal: Add Options_Menu to toggle foreign card sets and language accessibility
 
 /*TODO: Folded comments: Attempts to implement LoadBackground due to overtaxing of emulator Drawable; Working State: Inoperative.*/
 //    private class LoadBackground extends AsyncTask<String, Void, Drawable> {

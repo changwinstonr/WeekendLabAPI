@@ -1,14 +1,16 @@
-#Building a Flickr (or other API) Application ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) 
+#Building a 'Magic: The Gathering' Card Viewing Application
+###Scry API
 by: Winston Chang
 ## Exercise
 
 In this lab, I will be using an api to create a viewing app!
 
 #### Objectives
-- Ability to search for user entered keyword results from an api.
-- API calls should be done on a separate thread. Recommended 3rd-party Library: i.e. "android-async-http'.
-- Display user's search results.
-- Separate Class handles API calls
+- _V_ Ability to search for user entered keyword results from an api.
+- _X_ API calls should be done on a separate thread. Recommended 3rd-party Library: i.e. "android-async-http'.
+- _V_ Separate Class handles API calls (aren't these two < ^ the same?)
+- _X_ Display user's search results.
+
 
 **Bonus**:
 

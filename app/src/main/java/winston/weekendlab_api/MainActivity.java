@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements ScryApi.ApiRespon
         //loads scryImage into the ImageView
         scryImage = (ImageView) findViewById(R.id.scryImage);
         Picasso.with(MainActivity.this).load(response).into(scryImage);
+        Log.e("Push: ImageView Replace", "IMAGE");
     }
 
 
