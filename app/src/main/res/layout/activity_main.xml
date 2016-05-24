@@ -12,10 +12,9 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="1dp"
         android:text=""
-        android:layout_marginTop="48dp"
-        android:layout_below="@+id/scryButton"
+        android:layout_below="@+id/scryEntry"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -23,35 +22,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Search"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@id/textView"
+        android:layout_centerHorizontal="true"/>
 
     <EditText
         android:id="@+id/scryEntry"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="phone"
         android:ems="10"
-        android:textSize="14sp"
+        android:maxLength="6"
+        android:textSize="16sp"
         android:maxLines="1"
         android:hint="Find your Magic number (1-410064)..."
-        android:layout_above="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/scryButton"
-        android:layout_toStartOf="@+id/scryButton" />
+        android:textAlignment="center"
+        android:backgroundTint="@android:color/black"/>
 
 <!--    android:textColorHint="#000000"
-    android:textColor="#000000"
-    android:backgroundTint="@android:color/white" -->
+    android:textColor="#000000" -->
 
     <ImageView
         android:id="@+id/scryImage"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/textView"/>
 
     <!--<ProgressBar
         style="?android:attr/progressBarStyleHorizontal"
