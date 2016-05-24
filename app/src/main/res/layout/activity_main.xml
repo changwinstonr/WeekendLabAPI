@@ -9,6 +9,20 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="winston.weekendlab_api.MainActivity">
 
+    <EditText
+        android:id="@+id/scryEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:maxLength="6"
+        android:textSize="16sp"
+        android:maxLines="1"
+        android:hint="Find your Magic number \n(1-410064)"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@android:color/black"/>
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -25,18 +39,7 @@
         android:layout_below="@id/textView"
         android:layout_centerHorizontal="true"/>
 
-    <EditText
-        android:id="@+id/scryEntry"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:ems="10"
-        android:maxLength="6"
-        android:textSize="16sp"
-        android:maxLines="1"
-        android:hint="Find your Magic number (1-410064)..."
-        android:textAlignment="center"
-        android:backgroundTint="@android:color/black"/>
+
 
 <!--    android:textColorHint="#000000"
     android:textColor="#000000" -->
@@ -54,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/progressBar"
-        android:layout_above="@+id/scryImage"
+        android:layout_below="@+id/scryButton"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="36dp" />-->
 

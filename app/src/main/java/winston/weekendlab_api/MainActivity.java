@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
-//TODO: Stretch (Extended): 1) Test cases 2) Material design 3) Accessiblity 4) OAuth
+//TODO: 1) Test cases; Stretch (Extended): 2) Material design; 3) Accessiblity; 4) OAuth
 
 public class MainActivity extends AppCompatActivity implements ScryApi.ApiResponseHandler {
 
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements ScryApi.ApiRespon
                     Toast.makeText(MainActivity.this, "Scry has been bounced. Try scrying again.", Toast.LENGTH_LONG).show(); //Planeswalker fail.
                 } else {
                     onScry.setClickable(true);
+                    Toast.makeText(MainActivity.this, "Scry successful!", Toast.LENGTH_LONG).show();
                     ScryApi.getInstance(MainActivity.this).doRequest(scryIndex);
                 }
             }

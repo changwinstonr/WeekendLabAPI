@@ -3,8 +3,6 @@ package winston.weekendlab_api;
 //For Flickr: Implement key: a349634211c1df1171b6a4070099f108 | Secret: 2c9abbdf5789a87b
 //For MTG: http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=[1-410064]&type=card
 
-import android.widget.RelativeLayout;
-
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
@@ -16,7 +14,7 @@ import cz.msebera.android.httpclient.Header;
 public class ScryApi {
     private static ScryApi instance;
     private static ApiResponseHandler responseHandler;
-    private RelativeLayout relativeLayout;
+    //private RelativeLayout relativeLayout; //part of LoadBackground class
 
     //private ScryApi(){}
 
@@ -36,7 +34,7 @@ public class ScryApi {
                 try {
                     responseHandler.handleResponse(response.getString("multiverseid"));
                 } catch (JSONException e){
-                    e.printStackTrace();
+                    e.printStackTrace(); //returns error on exception
                 }
             }
         });
@@ -46,7 +44,7 @@ public class ScryApi {
         void handleResponse(String response);
     }
 
-/*TODO: Below folded comments: Implements LoadBackground due to overtaxing of emulator; Working State: Inoperative.*/
+/*TODO: Folded comments: Attempts to implement LoadBackground due to overtaxing of emulator Drawable; Working State: Inoperative.*/
 //    private class LoadBackground extends AsyncTask<String, Void, Drawable> {
 //        private String imageUrl, imageName;
 //        public LoadBackground(String url, String file_name){
