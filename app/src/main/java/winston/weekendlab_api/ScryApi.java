@@ -1,7 +1,9 @@
 package winston.weekendlab_api;
 
-//TODO For Flickr: Implement key: a349634211c1df1171b6a4070099f108 | Secret: 2c9abbdf5789a87b
-//TODO For MTG: http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=[1-410064]&type=card
+//For Flickr: Implement key: a349634211c1df1171b6a4070099f108 | Secret: 2c9abbdf5789a87b
+//For MTG: http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=[1-410064]&type=card
+
+import android.widget.RelativeLayout;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -14,10 +16,11 @@ import cz.msebera.android.httpclient.Header;
 public class ScryApi {
     private static ScryApi instance;
     private static ApiResponseHandler responseHandler;
+    private RelativeLayout relativeLayout;
 
     //private ScryApi(){}
 
-    //implements Response Hndler
+    //implements Response Handler
     public static ScryApi getInstance(ApiResponseHandler handler){
         responseHandler = handler;
         if (instance == null) {
@@ -37,10 +40,51 @@ public class ScryApi {
                 }
             }
         });
-    }
+    }//end doRequest Async search
 
     public interface ApiResponseHandler {
         void handleResponse(String response);
     }
+
+/*TODO: Below folded comments: Implements LoadBackground due to overtaxing of emulator; Working State: Inoperative.*/
+//    private class LoadBackground extends AsyncTask<String, Void, Drawable> {
+//        private String imageUrl, imageName;
+//        public LoadBackground(String url, String file_name){
+//            this.imageUrl = url;
+//            this.imageName = file_name;
+//        }
+//
+//        @Override
+//        protected void onPreExecute(){
+//            super.onPreExecute();
+//        }
+//
+//        @Override
+//        protected Drawable doInBackground(String... urls){
+//            try{
+//                InputStream iS = (InputStream) this.fetch(this.imageUrl);
+//                Drawable draw = Drawable.createFromStream(iS, this.imageUrl);
+//                return draw;
+//            } catch (MalformedURLException e){
+//                e.printStackTrace();
+//                return null;
+//            } catch (IOException e){
+//                e.printStackTrace();
+//                return null;
+//            }
+//        }
+//        private Object fetch(String address) throws MalformedURLException,IOException {
+//            URL url = new URL(address);
+//            Object content = url.getContent();
+//            return content;
+//        }
+//
+//        @Override
+//        protected void onPostExecute(Drawable result) {
+//            super.onPostExecute(result);
+//            relativeLayout.setBackground(result);
+//        }
+//    }//end LoadBackground
+//
 }
 

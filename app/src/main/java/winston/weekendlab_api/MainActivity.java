@@ -50,7 +50,8 @@ public class MainActivity extends AppCompatActivity implements ScryApi.ApiRespon
                 }
             }
         });//end OnClickListener
-    }
+
+    }//end onCreate
 
     @Override
     public void handleResponse(String response) {
