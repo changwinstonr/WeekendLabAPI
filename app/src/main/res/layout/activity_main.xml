@@ -10,7 +10,53 @@
     tools:context="winston.weekendlab_api.MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text=""
+        android:layout_marginTop="48dp"
+        android:layout_below="@+id/scryButton"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/scryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:id="@+id/scryEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:textSize="14sp"
+        android:maxLines="1"
+        android:hint="Find your Magic number (1-410064)..."
+        android:layout_above="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/scryButton"
+        android:layout_toStartOf="@+id/scryButton" />
+
+    <ImageView
+        android:id="@+id/scryImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <!--<ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_above="@+id/scryImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp" />-->
+
+
 </RelativeLayout>
