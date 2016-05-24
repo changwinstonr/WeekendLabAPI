@@ -31,7 +31,7 @@ public class ScryApi {
         //TODO: Try/Catch
             public void onSuccess(int statusCode, Header[] headers, JSONObject response){
                 try {
-                    responseHandler.handleResponse(response.getString("Image"));
+                    responseHandler.handleResponse(response.getString("multiverseid"));
                 } catch (JSONException e){
                     e.printStackTrace();
                 }
