@@ -1,8 +1,10 @@
 package winston.weekendlab_api;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -42,11 +44,11 @@ public class MainActivity extends AppCompatActivity implements ScryApi.ApiRespon
 
                 int scryIndex = Integer.parseInt(scryEntry.getText().toString());
                 if(scryIndex <= 0 || 410064 < scryIndex){ //last card of the most recent set Shadows over Innistrad
-                    onScry.setClickable(false);
+                    onScry.setClickable(true);
                     Toast.makeText(MainActivity.this, "Scry has been bounced. Try scrying again.", Toast.LENGTH_LONG).show(); //Planeswalker fail.
                 } else {
                     onScry.setClickable(true);
-                    Toast.makeText(MainActivity.this, "Scry successful!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Scry successful!"+" Spell "+scryIndex+" acquired.", Toast.LENGTH_LONG).show();
                     ScryApi.getInstance(MainActivity.this).doRequest(scryIndex);
                 }
             }
@@ -60,4 +62,16 @@ public class MainActivity extends AppCompatActivity implements ScryApi.ApiRespon
         scryImage = (ImageView) findViewById(R.id.scryImage);
         Picasso.with(MainActivity.this).load(response).into(scryImage);
     }
+
+
+    //TODO: Compensate for layout rotation
+    @Override
+    public void onConfigurationChanged (Configuration newConfig){
+        super.onConfigurationChanged(newConfig);
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE){
+            Log.e("Layout: Landscape", "LANDSCAPE");
+        }else{
+            Log.e("Layout: Portrait", "PORTRAIT");
+        }
+    }//end Layout configuration change
 }
